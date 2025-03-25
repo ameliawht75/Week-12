@@ -1,0 +1,6 @@
+{
+    "reviews": [
+        {"id":1, "title": "The Hobbit", "review": "A classic adventure story."},
+        {"id":2, "title": "The Lord of the Rings: The Fellowship of the Ring", "review": "The beginning of an epic journey."}
+    ]
+}

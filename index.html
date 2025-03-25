@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Review</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container mt-3">
+        <h3 class="display-4">Book Reviews</h2>
+        <form id="review-form" class="my-3">
+            <div class="my-4">
+                <input type="text" id="book-title" class="form-control" placeholder="Book Title" required>
+            </div>
+            <div class="mb-2">
+                <textarea id="book-review" class="form-control" rows="3" placeholder="Write your review here." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Review</button>
+        </form>
+        <ul id="review-list" class="list-group"></ul>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
