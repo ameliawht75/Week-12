@@ -3,23 +3,41 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Review</title>
+    <title>Book Reviews</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
   </head>
-  <body>
-    <div class="container mt-3">
-        <h3 class="display-4">Book Reviews</h2>
-        <form id="review-form" class="my-3">
-            <div class="my-4">
-                <input type="text" id="book-title" class="form-control" placeholder="Book Title" required>
-            </div>
-            <div class="mb-2">
-                <textarea id="book-review" class="form-control" rows="3" placeholder="Write your review here." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Add Review</button>
-        </form>
-        <ul id="review-list" class="list-group"></ul>
-    </div>
+  <body class="bg-light">
+    <h1 class="text-center mb-4">Book Reviews</h1>
+
+    <!-- Books -->
+    <div class="container mt-5">
+      <button onclick="onFetchBooksClick()" class="btn btn-primary btn-lg">Fetch Books</button>
+      <button onclick="onCreateBookClick()" class="btn btn-success mx-3 btn-lg">Create Test Book</button>
+      <button onclick="onDeleteBookClick()" class="btn btn-danger mx-3 btn-lg">Delete Test Book</button>
+      <div id="books-container"></div>
+
+      <hr class="my-5"/>
+
+      <!-- Genres -->
+      <div class="d-flex text-nowrap">
+          <button onclick="onFetchGenresClick()" class="btn btn-primary btn-lg">Fetch Genres</button>
+          <button onclick="onCreateGenreClick()" class="btn btn-success mx-3 btn-lg">Create Test Genre</button>
+          <button onclick="onDeleteGenreClick()" class="btn btn-danger mx-3 btn-lg">Delete Genre</button>
+      </div>
+      <div id="genres-container" class="mt-3"></div>
+
+      <hr class="my-5"/>
+
+      <!--Reviews-->
+      <div class="d-flex text-nowrap">
+          <button onclick="onFetchReviewsClick()" class="btn btn-primary btn-lg">Fetch Reviews</button>
+          <button onclick="onCreateReviewsClick()" class="btn btn-success mx-3 btn-lg">Create Test Review</button>
+          <button onclick="onDeleteReviewClick()" class="btn btn-danger mx-3 btn-lg">Delete Review</button>
+      </div>
+      <div id="reviews-container" class="mt-3"></div>
+  </div>
     <script src="index.js"></script>
+    <script src ="APE_KEY.js"></script>
   </body>
 </html>

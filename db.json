@@ -1,6 +1,91 @@
 {
-    "reviews": [
-        {"id":1, "title": "The Hobbit", "review": "A classic adventure story."},
-        {"id":2, "title": "The Lord of the Rings: The Fellowship of the Ring", "review": "The beginning of an epic journey."}
-    ]
+  "genres": [
+    {
+      "id": 1,
+      "title": "Historical"
+    },
+    {
+      "id": 2,
+      "title": "Fantasy"
+    },
+    {
+      "id": 3,
+      "title": "Mystery"
+    },
+    {
+      "title": "New Genre",
+      "id": 4
+    },
+    {
+      "title": "New Genre",
+      "id": 5
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "The Lord of the Rings",
+      "genreId": 2
+    },
+    {
+      "id": 2,
+      "title": "The Good Earth",
+      "genreId": 1
+    },
+    {
+      "id": 3,
+      "title": "The Other Boleyn Girl",
+      "genreId": 1
+    },
+    {
+      "id": 4,
+      "title": "The Clue in the Diary",
+      "genreId": 3
+    },
+    {
+      "title": "Test",
+      "genreId": 1,
+      "id": 5
+    },
+    {
+      "title": "Test",
+      "genreId": 1,
+      "id": 6
+    },
+    {
+      "title": "Test",
+      "genreId": 1,
+      "id": 7
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "author": "Jeff",
+      "text": "The GOAT!",
+      "stars": 5,
+      "bookId": 3
+    },
+    {
+      "id": 2,
+      "author": "Mike",
+      "text": "Only read for a class.  It was alright.",
+      "stars": 3,
+      "bookId": 2
+    },
+    {
+      "id": 3,
+      "author": "Amy",
+      "text": "The characters make too many mistakes for drama.  Better than the movie, though.",
+      "stars": 4,
+      "bookId": 3
+    },
+    {
+      "id": 4,
+      "author": "Nancy",
+      "text": "Interesting yet predictable.",
+      "stars": 2,
+      "bookId": 4
+    }
+  ]
 }
