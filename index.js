@@ -102,24 +102,35 @@ async function onFetchReviewsClick() {
     `).join("");
 }
 
-async function onCreateReviewClick() {
+async function onCreateReviewsClick() {
     const newReview = { 
-        title: "New Review",
-        content: "This is a test review.",
-        rating: 5,
-        bookId: 1
-     };
+        author: "Test User",   // Author of the review
+        text: "This is a test review.",  // Review content
+        stars: 4,              // Star rating (1-5)
+        bookId: 1              // ID of the book being reviewed
+    };
 
-    const response = await fetch("http://localhost:3000/reviews", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newReview)
-    });
+    try {
+        const response = await fetch("http://localhost:3000/reviews", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newReview)
+        });
 
-    const createdReview = await response.json();
-    console.log("Created Review:", createdReview);
-    
+        if (!response.ok) {
+            throw new Error("Failed to create review");
+        }
+
+        const createdReview = await response.json();
+        console.log("Created Review:", createdReview);
+
+        // Refresh the reviews list to show the new review
+        onFetchReviewsClick();
+    } catch (error) {
+        console.error("Error creating review:", error);
+    }
 }
+
 
 async function onDeleteReviewClick() {
     const idToDelete = reviewIdTextbox.value;

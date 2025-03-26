@@ -56,6 +56,11 @@
       "title": "Test",
       "genreId": 1,
       "id": 7
+    },
+    {
+      "title": "Test",
+      "genreId": 1,
+      "id": 8
     }
   ],
   "reviews": [
@@ -86,6 +91,13 @@
       "text": "Interesting yet predictable.",
       "stars": 2,
       "bookId": 4
+    },
+    {
+      "author": "Test User",
+      "text": "This is a test review.",
+      "stars": 4,
+      "bookId": 1,
+      "id": 5
     }
   ]
 }
