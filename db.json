@@ -37,6 +37,13 @@
   ],
   "reviews": [
     {
+      "id": 1,
+      "author": "John",
+      "text": "A great read.  I couldn't put it down.",
+      "stars": 5,
+      "bookId": 1
+    },
+    {
       "id": 2,
       "author": "Mike",
       "text": "Only read for a class.  It was alright.",

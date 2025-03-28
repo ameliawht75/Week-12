@@ -38,22 +38,21 @@ async function onCreateBookClick() {
     lastCreatedItem = newlyCreatedItem;
 }
 
-async function onDeleteBookClick() {
+async function onDeleteBookClick() { //went with a popup instead of a textbox as I kept getting errors.
     const bookId = prompt("Enter the ID of the book you want to delete:");
 
-    if (!bookId) {
+    if (!bookId) { //Fetch the book by ID and delete it.  Thank you to Reddit users for help with this.
         alert("Please enter a valid Book ID.");
         return;
     }
 
-    try {
+    try {  
         const response = await fetch(`http://localhost:3000/books/${bookId}`, {
             method: "DELETE",
         });
 
         if (response.ok) {
-            alert(`Book with ID ${bookId} deleted successfully!`);
-            // Optionally, refresh the books list
+            alert(`Book with ID ${bookId} deleted successfully!`); // Optionally, refresh the books list
             onFetchBooksClick();
         } else {
             alert("Failed to delete the book. Please try again.");
@@ -67,7 +66,7 @@ async function onDeleteBookClick() {
 /***** GENRES *****/
 
 const genresContainer = document.getElementById("genres-container");
-const genreIdTextbox = document.getElementById("genre-id-textbox");
+const genreIdTextbox = document.getElementById("genre-id-textbox"); //Was able to get textbox to work in this area and in reviews.
 
 async function onFetchGenresClick() {
     const response = await fetch("http://localhost:3000/genres");
@@ -112,13 +111,13 @@ async function onDeleteGenreClick() {
 /***** Reviews *****/
 
 const reviewsContainer = document.getElementById("reviews-container");
-const reviewIdTextbox = document.getElementById("reviews-id-textbox"); // Corrected variable name
+const reviewIdTextbox = document.getElementById("reviews-id-textbox"); 
 
 async function onFetchReviewsClick() {
     const response = await fetch("http://localhost:3000/reviews");
     const reviewsList = await response.json();
 
-    console.log("Fetched Reviews:", reviewsList); // Debugging log
+    console.log("Fetched Reviews:", reviewsList); // Debugging log because I was getting errors.
 
     reviewsContainer.innerHTML = reviewsList
         .map(
@@ -155,8 +154,7 @@ async function onCreateReviewsClick() {
         const createdReview = await response.json();
         console.log("Created Review:", createdReview);
 
-        // Refresh the reviews list to show the new review
-        onFetchReviewsClick();
+        onFetchReviewsClick(); // Refresh the reviews list to show the new review
     } catch (error) {
         console.error("Error creating review:", error);
     }
@@ -177,8 +175,7 @@ async function onDeleteReviewClick() {
 
         if (response.ok) {
             alert(`Review with ID ${reviewId} deleted successfully!`);
-            // Optionally, refresh the reviews list
-            onFetchReviewsClick();
+            onFetchReviewsClick(); // refresh the reviews list
         } else {
             alert('Failed to delete the review. Please try again.');
         }
