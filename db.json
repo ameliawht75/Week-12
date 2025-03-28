@@ -5,12 +5,12 @@
       "title": "Historical"
     },
     {
-      "id": 3,
-      "title": "Mystery"
+      "id": 2,
+      "title": "Fantasy"
     },
     {
-      "title": "New Genre",
-      "id": 7
+      "id": 3,
+      "title": "Mystery"
     }
   ],
   "books": [
@@ -30,34 +30,9 @@
       "genreId": 3
     },
     {
-      "title": "Test",
-      "genreId": 1,
-      "id": 5
-    },
-    {
-      "title": "Test",
-      "genreId": 1,
-      "id": 6
-    },
-    {
-      "title": "Test",
-      "genreId": 1,
-      "id": 7
-    },
-    {
-      "title": "Test",
-      "genreId": 1,
-      "id": 8
-    },
-    {
-      "title": "Test",
-      "genreId": 1,
-      "id": 9
-    },
-    {
-      "title": "Test",
-      "genreId": 1,
-      "id": 10
+      "id": 4,
+      "title": "The Lord of the Rings",
+      "genreId": 2
     }
   ],
   "reviews": [
@@ -74,13 +49,6 @@
       "text": "The characters make too many mistakes for drama.  Better than the movie, though.",
       "stars": 4,
       "bookId": 3
-    },
-    {
-      "author": "Test User",
-      "text": "This is a test review.",
-      "stars": 4,
-      "bookId": 1,
-      "id": 4
     }
   ]
 }

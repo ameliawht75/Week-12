@@ -9,6 +9,7 @@ Use Bootstrap and/or CSS to style your project
 */
 const booksContainer = document.getElementById("books-container");
 
+/*****Books*****/
 async function onFetchBooksClick() {
     const response = await fetch("http://localhost:3000/books");
     const bookList = await response.json();
@@ -38,15 +39,29 @@ async function onCreateBookClick() {
 }
 
 async function onDeleteBookClick() {
-    if (lastCreatedItem === null) {
-        console.log("No item created yet to delete");
+    const bookId = prompt("Enter the ID of the book you want to delete:");
+
+    if (!bookId) {
+        alert("Please enter a valid Book ID.");
         return;
     }
-    await fetch(`http://localhost:3000/books/${lastCreatedItem.id}`, {
-        method: "DELETE",
-    });
 
-    lastCreatedItem = null; //Reset after deletion
+    try {
+        const response = await fetch(`http://localhost:3000/books/${bookId}`, {
+            method: "DELETE",
+        });
+
+        if (response.ok) {
+            alert(`Book with ID ${bookId} deleted successfully!`);
+            // Optionally, refresh the books list
+            onFetchBooksClick();
+        } else {
+            alert("Failed to delete the book. Please try again.");
+        }
+    } catch (error) {
+        console.error("Error deleting the book:", error);
+        alert("An error occurred while deleting the book.");
+    }
 }
 
 /***** GENRES *****/
@@ -148,15 +163,27 @@ async function onCreateReviewsClick() {
 }
 
 async function onDeleteReviewClick() {
-    const idToDelete = reviewIdTextbox.value; // Corrected variable name
-    if (!idToDelete) {
-        console.log("Enter a review ID to delete");
+    const reviewId = document.getElementById('review-id-textbox').value; // Corrected ID
+
+    if (!reviewId) {
+        alert('Please enter a Review ID.');
         return;
     }
 
-    await fetch(`http://localhost:3000/reviews/${idToDelete}`, {
-        method: "DELETE",
-    });
+    try {
+        const response = await fetch(`http://localhost:3000/reviews/${reviewId}`, {
+            method: 'DELETE',
+        });
 
-    reviewIdTextbox.value = "";
+        if (response.ok) {
+            alert(`Review with ID ${reviewId} deleted successfully!`);
+            // Optionally, refresh the reviews list
+            onFetchReviewsClick();
+        } else {
+            alert('Failed to delete the review. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error deleting the review:', error);
+        alert('An error occurred while deleting the review.');
+    }
 }
